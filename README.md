@@ -88,11 +88,7 @@ and **decoder** (transposed convolutions).
 #### 2.2 Fully Convolutional Networks for Semantic Segmentation
 
 
-The Semantic Segmentation network provided by this
-[paper](https://people.eecs.berkeley.edu/~jonlong/long_shelhamer_fcn.pdf)
-learns to combine coarse, high layer informaiton with fine, low layer
-information. The pooling and prediction
-layers are shown as grid that reveal relative spatial coarseness,
+The pooling and prediction layers are shown as grid that reveal relative spatial coarseness,
 while intermediate layers are shown as vertical lines
 
 * The encoder
@@ -122,7 +118,7 @@ the loss function in tensorflow as following commands.
 logits = tf.reshape(input, (-1, num_classes))
 cross_entropy_loss = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(logits, labels))
 ```
-Then, we have an end-to-end model for semantic segmentation.
+And thus  we have an end-to-end model for semantic segmentation.
 
 ### 3 Dataset
 
@@ -154,10 +150,16 @@ With only 384 labeled training images, the FCN-VGG16 performs well to find
 where is the road in the testing data, and the testing speed is about 6
 fps in my laptop. The model performs very well on either highway or urban driving.
 Some testing examples are shown as follows:
+
+
+
 ![alt text](https://github.com/sharathsrini/Semantic-Segmentation-for-Kitti-Dataset/blob/master/runs/1527575647.275648/um_000004.png)
 ![alt text](https://github.com/sharathsrini/Semantic-Segmentation-for-Kitti-Dataset/blob/master/runs/1527575647.275648/umm_000036.png)
 ![alt text](https://github.com/sharathsrini/Semantic-Segmentation-for-Kitti-Dataset/blob/master/runs/1527575647.275648/umm_000046.png)
 ![alt text](https://github.com/sharathsrini/Semantic-Segmentation-for-Kitti-Dataset/blob/master/runs/1527575647.275648/umm_000069.png)
+
+
+
 #### 5.2 Limitations
 
 Based on my test on **4833** testing images. There are two scenarios where
