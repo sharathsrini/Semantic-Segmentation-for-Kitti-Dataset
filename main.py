@@ -6,7 +6,7 @@ from distutils.version import LooseVersion
 import project_tests as tests
 import csv
 import time
-
+print("all the packages have been successfully loaded")
 
 model_path='./model/model.ckpt'
 
@@ -138,7 +138,7 @@ def train_nn(sess, epochs, batch_size, get_batches_fn, train_op, cross_entropy_l
 
     sess.run(tf.global_variables_initializer())
 
-    lr = 0.0001
+    lr = 0.0001 #learning rate
 
     print("Training...")
     print()
@@ -227,7 +227,7 @@ def predict_images(test_data_path, print_speed=False):
         # Restore the saved model
         saver = tf.train.Saver()
         saver.restore(sess, model_path)
-        print("Restored the saved Model in file: %s" % model_path)
+        print("Restored the previously saved Model in file: %s" % model_path)
 
         # Predict the samples
         helper.pred_samples(runs_dir, test_data_path, sess, image_shape, logits, keep_prob, input_image, print_speed)
@@ -236,9 +236,9 @@ def predict_images(test_data_path, print_speed=False):
 
 if __name__ == '__main__':
 
-    training_flag = True   # True: train the NN; False: predict with trained NN
+    to_train = True   # True: train the NN; False: predict with trained NN
 
-    if training_flag:
+    if to_train:
         # run unittest before training
         tests.test_load_vgg(load_vgg, tf)
         tests.test_layers(layers)
