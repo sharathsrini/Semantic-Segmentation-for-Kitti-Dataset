@@ -14,24 +14,17 @@ Segmentation is essential for image analysis tasks. Semantic segmentation descri
 ##### Applications for semantic segmentation include:
 
 1. Autonomous driving
-
 2. Industrial inspection
-
 3. Classification of terrain visible in satellite imagery
-
 4. Medical imaging analysis
 
-Semantic segmentation is a natural step in the progression from coarse to fine inference:
+**Semantic segmentation is a natural step in the progression from coarse to fine inference:
 
 The origin could be located at classification, which consists of making a prediction for a whole input.
 The next step is localization / detection, which provide not only the classes but also additional information regarding the spatial location of those classes.
 Finally, semantic segmentation achieves fine-grained inference by making dense predictions inferring labels for every pixel, so that each pixel is labeled with the class of its enclosing object ore region.
 
 ### 1 Code & Files
-
-
-
-
 
 #### 1.1 Dependencies & my environment
 
@@ -133,21 +126,18 @@ There are **4833** testing images are processed with the trained models.
 
 Some key parameters in training stage, and the traning loss and training
 time for each epochs are shown in the following table.
-
+```sh
     epochs = 30
     batch_size = 8
     learning_rate = 0.0001
-
+```
 
 
 ### 5 Discussion
 
 #### 5.1 Good Performance
 
-With only 384 labeled training images, the FCN-VGG16 performs well to find
-where is the road in the testing data, and the testing speed is about 6
-fps in my laptop. The model performs very well on either highway or urban driving.
-Some testing examples are shown as follows:
+With only 384 labeled training images, the FCN-VGG16 performs well to find where is the road in the testing data, and the testing speed is about 6 fps .The model performs very well on either highway or urban driving.Some testing examples are shown as follows:
 
 
 
@@ -162,11 +152,7 @@ Some testing examples are shown as follows:
 
 Based on my test on **4833** testing images. There are two scenarios where
 th current model does NOT perform well: (1) turning spot, (2)
-over-exposed area.
-
-One possible approach is to use white-balance techniques or image restoration methods
-to get the correct image. The other possible approach is to add more
-training data with over-exposed scenarios, and let the network to learn
-how to segment the road even under the over-expose scenarios.
+over-exposed area.One possible approach is to use white-balance techniques or image restoration methods
+to get the correct image. The other possible approach is to add more training data with over-exposed scenarios, and let the network to learn how to segment the road even under the over-expose scenarios.
 
 
