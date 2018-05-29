@@ -1,4 +1,4 @@
-# **Road Segmentation**
+# **Semantic Segmentation**
 
 ### Objective
 In the case of the autonomous driving, given an front camera view, the car
@@ -6,8 +6,26 @@ needs to know where is the road. In this project, we trained a neural network
 to label the pixels of a road in images, by using a method named Fully
 Convolutional Network (FCN). In this project, FCN-VGG16 is implemented and trained
 with KITTI dataset for road segmentation.
+Segmentation is essential for image analysis tasks. Semantic segmentation describes the process of associating each pixel of an image with a class label, (such as flower, person, road, sky, ocean, or car).
 
 
+![alt text][https://www.mathworks.com/help/vision/ug/semanticsegmentation_transferlearning.png]
+
+##### Applications for semantic segmentation include:
+
+1. Autonomous driving
+
+2. Industrial inspection
+
+3. Classification of terrain visible in satellite imagery
+
+4. Medical imaging analysis
+
+Semantic segmentation is a natural step in the progression from coarse to fine inference:
+
+The origin could be located at classification, which consists of making a prediction for a whole input.
+The next step is localization / detection, which provide not only the classes but also additional information regarding the spatial location of those classes.
+Finally, semantic segmentation achieves fine-grained inference by making dense predictions inferring labels for every pixel, so that each pixel is labeled with the class of its enclosing object ore region.
 
 ### 1 Code & Files
 
@@ -96,7 +114,7 @@ while intermediate layers are shown as vertical lines
 
 **VGG-16 architecture**
 
-![alt text](https://www.pyimagesearch.com/wp-content/uploads/2017/03/imagenet_vgg16.png)
+
 
 
 #### 2.3 Classification & Loss
