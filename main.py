@@ -59,44 +59,31 @@ def layers(vgg_layer3_out, vgg_layer4_out, vgg_layer7_out, num_classes):
     :return: The Tensor for the last layer of output
     """
     # making sure the resulting shape are the same
-    vgg_layer7_logits = tf.layers.conv2d(
-        vgg_layer7_out, num_classes, kernel_size=1,
+    vgg_layer7_logits = tf.layers.conv2d(vgg_layer7_out, num_classes, kernel_size=1,
         kernel_initializer= tf.random_normal_initializer(stddev=0.01),
         kernel_regularizer= tf.contrib.layers.l2_regularizer(1e-4), name='vgg_layer7_logits')
-    vgg_layer4_logits = tf.layers.conv2d(
-        vgg_layer4_out, num_classes, kernel_size=1,
+    vgg_layer4_logits = tf.layers.conv2d(vgg_layer4_out, num_classes, kernel_size=1,
         kernel_initializer= tf.random_normal_initializer(stddev=0.01),
         kernel_regularizer= tf.contrib.layers.l2_regularizer(1e-4), name='vgg_layer4_logits')
-    vgg_layer3_logits = tf.layers.conv2d(
-        vgg_layer3_out, num_classes, kernel_size=1,
+    vgg_layer3_logits = tf.layers.conv2d(vgg_layer3_out, num_classes, kernel_size=1,
         kernel_initializer= tf.random_normal_initializer(stddev=0.01),
         kernel_regularizer= tf.contrib.layers.l2_regularizer(1e-4), name='vgg_layer3_logits')
 
     # # Apply the transposed convolutions to get upsampled version, and then merge the upsampled layers
-    fcn_decoder_layer1 = tf.layers.conv2d_transpose(
-        vgg_layer7_logits, num_classes, kernel_size=4, strides=(2, 2),
-        padding='same',
-        kernel_initializer= tf.random_normal_initializer(stddev=0.01),
-        kernel_regularizer= tf.contrib.layers.l2_regularizer(1e-4), name='fcn_decoder_layer1')
+    fcn_decoder_layer1 = tf.layers.conv2d_transpose( vgg_layer7_logits, num_classes, kernel_size=4, strides=(2, 2),
+        padding='same',kernel_initializer= tf.random_normal_initializer(stddev=0.01),kernel_regularizer= tf.contrib.layers.l2_regularizer(1e-4), name='fcn_decoder_layer1')
 
     # add the first skip connection from the vgg_layer4_out
-    fcn_decoder_layer2 = tf.add(
-        fcn_decoder_layer1, vgg_layer4_logits, name='fcn_decoder_layer2')
+    fcn_decoder_layer2 = tf.add(fcn_decoder_layer1, vgg_layer4_logits, name='fcn_decoder_layer2')
 
     # then follow this with another transposed convolution layer and make shape the same as layer3
-    fcn_decoder_layer3 = tf.layers.conv2d_transpose(
-        fcn_decoder_layer2, num_classes, kernel_size=4, strides=(2, 2),
-        padding='same',
-        kernel_initializer= tf.random_normal_initializer(stddev=0.01),
-        kernel_regularizer= tf.contrib.layers.l2_regularizer(1e-4), name='fcn_decoder_layer3')
+    fcn_decoder_layer3 = tf.layers.conv2d_transpose( fcn_decoder_layer2, num_classes, kernel_size=4, strides=(2, 2),
+        padding='same', kernel_initializer= tf.random_normal_initializer(stddev=0.01), kernel_regularizer= tf.contrib.layers.l2_regularizer(1e-4), name='fcn_decoder_layer3')
 
     # apply the same steps for the third layer output.
-    fcn_decoder_layer4 = tf.add(
-        fcn_decoder_layer3, vgg_layer3_logits, name='fcn_decoder_layer4')
-    fcn_decoder_output = tf.layers.conv2d_transpose(
-        fcn_decoder_layer4, num_classes, kernel_size=16, strides=(8, 8),
-        padding='same',
-        kernel_initializer= tf.random_normal_initializer(stddev=0.01),
+    fcn_decoder_layer4 = tf.add( fcn_decoder_layer3, vgg_layer3_logits, name='fcn_decoder_layer4')
+    fcn_decoder_output = tf.layers.conv2d_transpose(fcn_decoder_layer4, num_classes, kernel_size=16, strides=(8, 8),
+        padding='same', kernel_initializer= tf.random_normal_initializer(stddev=0.01),
         kernel_regularizer= tf.contrib.layers.l2_regularizer(1e-4), name='fcn_decoder_layer4')
 
     return fcn_decoder_output
