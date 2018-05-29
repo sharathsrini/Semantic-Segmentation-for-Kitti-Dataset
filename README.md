@@ -16,7 +16,6 @@ with KITTI dataset for road segmentation.
 * [main.py](main.py) is the main code for demos
 * [project_tests.py](project_test.py) includes the unittest
 * [helper.py](yolo_pipeline.py) includes some helper functions
-* [env-gpu-py35.yml](env-gpu-py35.yml) is environmental file with GPU and Python3.5
 * [data](data) folder contains the KITTI road data, the VGG model and source images.
 * [model](model) folder is used to save the trained model
 * [runs](runs) folder contains the segmentation examples of the testing data
@@ -97,7 +96,7 @@ while intermediate layers are shown as vertical lines
 
 **VGG-16 architecture**
 
-![vgg16][image2]
+![alt text](https://www.pyimagesearch.com/wp-content/uploads/2017/03/imagenet_vgg16.png)
 
 
 #### 2.3 Classification & Loss
@@ -116,7 +115,7 @@ Then, we have an end-to-end model for semantic segmentation.
 
 ### 3 Dataset
 
-
+![alt text][http://www.cvlibs.net/datasets/kitti/]
 In this project, **384** labeled images are used as training data.
 Download the [Kitti Road dataset](http://www.cvlibs.net/datasets/kitti/eval_road.php)
 from [here](http://www.cvlibs.net/download.php?file=data_road.zip).
@@ -145,15 +144,6 @@ where is the road in the testing data, and the testing speed is about 6
 fps in my laptop. The model performs very well on either highway or urban driving.
 Some testing examples are shown as follows:
 
-![][s1]
-
-![][s2]
-
-![][s3]
-
-![][s4]
-
-![][s5]
 
 
 #### 5.2 Limitations
@@ -167,31 +157,4 @@ to get the correct image. The other possible approach is to add more
 training data with over-exposed scenarios, and let the network to learn
 how to segment the road even under the over-expose scenarios.
 
-**When the Road turns**
 
-![][l2]
-
-
-**Over-exposed area**
-
-![][l3]
-
-
-
-
-[//]: # (Image/video References)
-[image0]: ./data/source/fcn_general.jpg
-[image1]: ./data/source/fcn.jpg
-[image2]: ./data/source/vgg16.png
-[image3]: ./data/source/origin.png
-[image4]: ./data/source/mask.png
-[s1]: ./data/source/sample1.png
-[s2]: ./data/source/sample2.png
-[s3]: ./data/source/sample3.png
-[s4]: ./data/source/sample4.png
-[s5]: ./data/source/sample5.png
-[l1]: ./data/source/fail1.png
-[l2]: ./data/source/fail2.png
-[l3]: ./data/source/fail3.png
-[l4]: ./data/source/fail4.png
-[demo_gif]: ./data/source/demo.gif
