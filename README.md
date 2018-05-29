@@ -29,18 +29,11 @@ Finally, semantic segmentation achieves fine-grained inference by making dense p
 
 ### 1 Code & Files
 
-#### 1.1 My project includes the following files and folders
-
-* [main.py](main.py) is the main code for demos
-* [project_tests.py](project_test.py) includes the unittest
-* [helper.py](yolo_pipeline.py) includes some helper functions
-* [data](data) folder contains the KITTI road data, the VGG model and source images.
-* [model](model) folder is used to save the trained model
-* [runs](runs) folder contains the segmentation examples of the testing data
 
 
 
-#### 1.2 Dependencies & my environment
+
+#### 1.1 Dependencies & my environment
 
 Miniconda is used for managing my [**dependencies**](env-gpu-py35.yml).
 
@@ -48,7 +41,7 @@ Miniconda is used for managing my [**dependencies**](env-gpu-py35.yml).
 * OS: Ubuntu 16.04
 
 
-#### 1.3 How to run the code
+#### 1.2 How to run the code
 
 (1) Download KITTI data (training and testing)
 
@@ -68,7 +61,7 @@ python main.py
 ```
 
 
-#### 1.4. Release History
+#### 1.3. Release History
 ```sh
 * 0.1.1
     * Updated documents
@@ -161,9 +154,10 @@ With only 384 labeled training images, the FCN-VGG16 performs well to find
 where is the road in the testing data, and the testing speed is about 6
 fps in my laptop. The model performs very well on either highway or urban driving.
 Some testing examples are shown as follows:
-
-
-
+![alt text](https://github.com/sharathsrini/Semantic-Segmentation-for-Kitti-Dataset/blob/master/runs/1527575647.275648/um_000004.png)
+![alt text](https://github.com/sharathsrini/Semantic-Segmentation-for-Kitti-Dataset/blob/master/runs/1527575647.275648/umm_000036.png)
+![alt text](https://github.com/sharathsrini/Semantic-Segmentation-for-Kitti-Dataset/blob/master/runs/1527575647.275648/umm_000046.png)
+![alt text](https://github.com/sharathsrini/Semantic-Segmentation-for-Kitti-Dataset/blob/master/runs/1527575647.275648/umm_000069.png)
 #### 5.2 Limitations
 
 Based on my test on **4833** testing images. There are two scenarios where
