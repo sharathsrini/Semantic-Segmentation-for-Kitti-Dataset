@@ -114,7 +114,7 @@ while intermediate layers are shown as vertical lines
 
 **VGG-16 architecture**
 
-![alt text](https://www.pyimagesearch.com/2017/03/20/imagenet-vggnet-resnet-inception-xception-keras/)
+![alt text](https://www.pyimagesearch.com/wp-content/uploads/2017/03/imagenet_vgg16.png)
 
 
 #### 2.3 Classification & Loss
