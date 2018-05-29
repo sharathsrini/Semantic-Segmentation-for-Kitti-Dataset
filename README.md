@@ -9,7 +9,7 @@ with KITTI dataset for road segmentation.
 Segmentation is essential for image analysis tasks. Semantic segmentation describes the process of associating each pixel of an image with a class label, (such as flower, person, road, sky, ocean, or car).
 
 
-![alt text][https://www.mathworks.com/help/vision/ug/semanticsegmentation_transferlearning.png]
+![alt text](https://www.mathworks.com/help/vision/ug/semanticsegmentation_transferlearning.png)
 
 ##### Applications for semantic segmentation include:
 
@@ -114,7 +114,7 @@ while intermediate layers are shown as vertical lines
 
 **VGG-16 architecture**
 
-
+![alt text](https://www.pyimagesearch.com/2017/03/20/imagenet-vggnet-resnet-inception-xception-keras/)
 
 
 #### 2.3 Classification & Loss
@@ -133,7 +133,7 @@ Then, we have an end-to-end model for semantic segmentation.
 
 ### 3 Dataset
 
-![alt text][http://www.cvlibs.net/datasets/kitti/]
+
 In this project, **384** labeled images are used as training data.
 Download the [Kitti Road dataset](http://www.cvlibs.net/datasets/kitti/eval_road.php)
 from [here](http://www.cvlibs.net/download.php?file=data_road.zip).
