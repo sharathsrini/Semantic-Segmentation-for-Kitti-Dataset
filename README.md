@@ -35,8 +35,6 @@ Finally, semantic segmentation achieves fine-grained inference by making dense p
 
 #### 1.1 Dependencies & my environment
 
-Miniconda is used for managing my [**dependencies**](env-gpu-py35.yml).
-
 * Python3.5, tensorflow-gpu, CUDA8, Numpy, SciPy
 * OS: Ubuntu 16.04
 
