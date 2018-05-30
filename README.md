@@ -52,18 +52,7 @@ python main.py
 ```
 
 
-#### 1.3. Release History
-```sh
-* 0.1.1
-    * Updated documents
-    * Date 7 December 2017
 
-* 0.1.0
-    * The first proper release
-    * Date 6 December 2017
-```
-
----
 
 ### 2 Network Architecture
 
